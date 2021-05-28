@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<title>Brain Tumour</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px;}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+
+
+.bg-img {
+  /* The image used */
+  background-image: url("C:/Users/dell/Desktop/front end/assets/2.jpg");
+
+  min-height: 600px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  left: 380px;
+  top: 80px;
+  /*border-top: 50px;*/
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: #0f0e0e;
+}
+
+
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #87CEFA;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+
+input { 
+  width: 100%; 
+  margin-bottom: 20px; 
+  background: rgba(0,0,0,0.3);
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 15px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 4px;
+  box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+  -webkit-transition: box-shadow .5s ease;
+  -moz-transition: box-shadow .5s ease;
+  -o-transition: box-shadow .5s ease;
+  -ms-transition: box-shadow .5s ease;
+  transition: box-shadow .5s ease;
+  resize:vertical;
+    overflow: ;
+  
+}
+input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+
+
+</style>
+
+<head>
+  <script src='https://meet.jit.si/external_api.js'></script>
+</head>
+
+
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="C:\Users\dell\Desktop\front end\assets\1.jpg" style="width:100%">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>VIDEO CALL</p>
+  </a>
+<!--   <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>PHOTOS</p>
+  </a> -->
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">VIDEO CALL</a>
+    <!-- <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a> -->
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small"></span>Predict Brain Tumour</h1>
+    <p>Be Safe, Be Healthy</p>
+
+
+<div class="bg-img">
+  <form action="/action_page.php" class="container">
+    <h1>Predict here!</h1>
+    <label for="email"><b>Select image to upload</b></label>
+    <input type="file" name="fileToUpload" id="fileToUpload" required>
+    <input type="submit" value="Upload Image" name="submit">
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    
+  </form>
+</div>
+
+<!-- <div class="bg-img">
+    <img src="C:\Users\dell\Desktop\front end\assets\1.jpg" alt="boy" class="w3-image" width="1000" height="1200">
+
+    <form action="{{ url_for('predict')}}" method="post" class="container">
+          <input type="text" name="Message" placeholder="Enter your problem here" required="required" />
+          <h2>Select image to upload:</h2>
+          <input type="file" name="fileToUpload" id="fileToUpload">
+      <input type="submit" value="Upload Image" name="submit">
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+</form>
+</div>
+ -->
+</header>
+</div>
+
+
+<div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">Interactioin Platform</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>Our video calling is helping a lot of people to solve their problem blah blah blah................................................................................................................................................................................................................................................TRY THIS OUT!
+    </p>
+
+<button id="start" type="button" class="btn btn-primary btn-block btn-large" style="height:5  0px;width:100px">Start</button>
+<div id="jitsi-container">
+</div>
+ <div id="vidcall">
+     <script>
+var button = document.querySelector('#start');
+var container = document.querySelector('#jitsi-container');
+var api = null;
+ 
+button.addEventListener('click', () => {
+    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var stringLength = 30;
+ 
+    function pickRandom() {
+    return possible[Math.floor(Math.random() * possible.length)];
+    }
+ 
+var randomString = Array.apply(null, Array(stringLength)).map(pickRandom).join('');
+ 
+    var domain = "meet.jit.si";
+    var options = {
+        "roomName": randomString,
+        "parentNode": container,
+        "width": 600,
+        "height": 600,
+    };
+    api = new JitsiMeetExternalAPI(domain, options);
+});
+ 
+</script>
+ </div>
+
+
+
+
+
+
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i>anywhere, India</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +91 511551651</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
+    </div><br>
+    <p>Let's get in touch. Send me a message:</p>
+
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  <!-- End Contact Section -->
+  </div>
+  
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+<!--     <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p> -->
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>
